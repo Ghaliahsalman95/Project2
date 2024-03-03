@@ -8,19 +8,19 @@ public class Main {
         try {
             Route routeOne = new Route("Route!", "destination1", 50);
             Route routeTwo = new Route("Route !!", "destination2", 200);
-            Car carOne = new Car("CarOne", 5, new Route("AddressCarOne", "destination", 50));
-            Car carTwo = new Car("CarTwo", 0, new Route("AddressCarTwo", "destination2", 200));
+            Car carOne = new Car("CarOne", 5, routeOne);
+            Car carTwo = new Car("CarTwo", 0, routeTwo);
             carOne.setRoute(routeOne);
             carTwo.setRoute(routeTwo);
             ArrayList<Passenger> passengers = new ArrayList<Passenger>();
-            Passenger passengerS=new SubscribersP("Ghalia h", "12345", carOne);
+            Passenger passengerS = new SubscribersP("Ghalia h", "12345", carOne);
             passengerS.setCar(carOne);
-            Passenger passengerNon=new NonSubscribersP("Ghalia h", "12345", carOne,true);
+            Passenger passengerNon = new NonSubscribersP("Ghalia h", "12345", carOne, true);
             passengerNon.setCar(carTwo);
-            for (Passenger p:passengers){
+            for (Passenger p : passengers) {
                 p.displayInfor();
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
 
             System.out.println('\t' + "ALERT::::" + e.getMessage());
         }
