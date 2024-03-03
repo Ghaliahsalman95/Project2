@@ -42,11 +42,11 @@ public class NonSubscribersP extends Passenger {
 //Trip cost = car_object.route_object.price --> in case the non-subscribers passengers
 //don’t have a discount coupon
             if (this.hasCoupon) {
-                float cost = this.getCar().getRoute().getPrice() - (this.getCar().getRoute().getPrice() * .10f);
+                float cost = super.getCar().getRoute().getPrice() - (super.getCar().getRoute().getPrice() * .10f);
                 super.setTripCost(cost);
                 displayInfor();
             } else {
-                float cost = this.getCar().getRoute().getPrice();
+                float cost = super.getCar().getRoute().getPrice();
                 super.setTripCost(cost);
                 displayInfor();
             }
@@ -61,7 +61,7 @@ public class NonSubscribersP extends Passenger {
     public void displayInfor() {
         if (this.isHasCoupon()) {
             System.out.println("Passenger Name: " + super.getName() + '\t' + "ID: " + super.getID()
-                    + '\n' + "Car Code: " + getCar().getCode() + '\t' + "Start Pick Up:" + getCar().getRoute().getStartPickup()
+                    + '\n' + "Car Code: " + super.getCar().getCode() + '\t' + "Start Pick Up:" + super.getCar().getRoute().getStartPickup()
                     + '\n' + "Destination: " + super.getCar().getRoute().getDestination() + '\n' +
                     "Price:" + super.getCar().getRoute().getPrice() + '\t' + "After 10% Discount: "
                     +super.getTripCost()+'\n');
